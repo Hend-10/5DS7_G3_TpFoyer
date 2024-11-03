@@ -15,19 +15,19 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class ConfigAOP {
 
-    @Before("execution(* tn.esprit.tpfoyer.service.*.*(..))")
+    @Before("execution(* tn.esprit.tpfoyer.Services.*.*(..))")
     public void logMethodEntry(JoinPoint joinPoint) {
         String name = joinPoint.getSignature().getName();
         log.info("In Metod AOP : " + name);
     }
 
-    @After("execution(* tn.esprit.tpfoyer.service.*.add*(..))")
+    @After("execution(* tn.esprit.tpfoyer.Services.*.add*(..))")
     public void logMethodOut(JoinPoint joinPoint) {
         String name = joinPoint.getSignature().getName();
         log.info("Execution Réussie ! ");
     }
 
-    @Around("execution(* tn.esprit.tpfoyer.service.*.*(..))")
+    @Around("execution(* tn.esprit.tpfoyer.Services.*.*(..))")
     public Object profile(ProceedingJoinPoint pjp) throws Throwable
     {
         long start= System.currentTimeMillis();
