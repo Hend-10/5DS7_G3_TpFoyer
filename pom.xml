@@ -52,14 +52,6 @@
             <version>2.1.0</version>
         </dependency>
     </dependencies>
-
-    <distributionManagement>
-        <repository>
-            <id>deploymentRepoo</id>
-            <url>http://192.168.50.4:8081/repository/maven-releases/</url>
-        </repository>
-    </distributionManagement>
-
     <build>
         <plugins>
             <plugin>
@@ -110,4 +102,11 @@
             </plugin>
         </plugins>
     </build>
+
+    <distributionManagement>
+        <repository>
+            <id>deploymentRepoo</id>
+            <url>http://192.168.50.4:8081/repository/maven-releases/</url>
+        </repository>
+    </distributionManagement>
 </project>
