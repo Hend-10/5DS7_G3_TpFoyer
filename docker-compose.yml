@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   mysqldb:
     image: mysql:5.7
@@ -15,7 +13,7 @@ services:
   app-tpfoyer:
     depends_on:
       - mysqldb
-    image: ahend/tpfoyer:1.0.0
+    image: ahend/tpfoyer:latest
     restart: on-failure
     ports:
       - "8089:8089"
