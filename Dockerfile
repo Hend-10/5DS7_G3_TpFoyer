@@ -1,11 +1,11 @@
-# Use an official OpenJDK runtime as a parent image
+# Utiliser l'image OpenJDK 11
 FROM openjdk:11-jdk-slim
 
-# Set the working directory in the container
-WORKDIR /app
+# Exposer le port de votre application Spring Boot
+EXPOSE 8080
 
-# Copy the JAR file from target to the working directory
+# Ajouter le JAR généré dans le conteneur
 ADD target/tp-foyer-5.0.0.jar tp-foyer.jar
 
-# Define the command to run the application
-CMD ["java", "-jar", "tp-foyer.jar"]
+# Définir la commande à exécuter
+ENTRYPOINT ["java", "-jar", "/tp-foyer.jar"]
