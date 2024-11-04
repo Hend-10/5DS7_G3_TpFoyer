@@ -12,7 +12,7 @@ ENV NEXUS_URL="http://192.168.50.4:8081"
 ARG VERSION
 
 # Set the path to the JAR file in Nexus using the version argument
-ENV JAR_FILE_PATH="/repository/maven-releases/tn/esprit/tp-foyer/${VERSION}/tp-foyer${VERSION}.jar"
+ENV JAR_FILE_PATH="/repository/maven-releases/tn/esprit/tp-foyer/${VERSION}/tp-foyer-${VERSION}.jar"
 # Download the JAR file from Nexus using wget
 RUN curl -o tp-foyer.jar "${NEXUS_URL}${JAR_FILE_PATH}"
 
