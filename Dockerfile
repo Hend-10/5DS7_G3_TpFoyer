@@ -1,6 +1,5 @@
-# Utiliser l'image OpenJDK 11
+# Utiliser l'image OpenJDK 17
 FROM openjdk:17
-
 
 # Exposer le port de votre application Spring Boot
 EXPOSE 8082
@@ -13,8 +12,12 @@ ARG VERSION
 
 # Set the path to the JAR file in Nexus using the version argument
 ENV JAR_FILE_PATH="/repository/maven-releases/tn/esprit/tp-foyer/${VERSION}/tp-foyer-${VERSION}.jar"
-# Download the JAR file from Nexus using wget
-RUN curl -o tp-foyer.jar "${NEXUS_URL}${JAR_FILE_PATH}"
+
+# Print the final JAR file URL for debugging
+RUN echo "Downloading JAR from: ${NEXUS_URL}${JAR_FILE_PATH}"
+
+# Download the JAR file from Nexus using curl
+RUN curl -f -o tp-foyer.jar "${NEXUS_URL}${JAR_FILE_PATH}"
 
 # Définir la commande à exécuter
 ENTRYPOINT ["java", "-jar", "/tp-foyer.jar"]
