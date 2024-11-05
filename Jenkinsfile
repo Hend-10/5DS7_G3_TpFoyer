@@ -30,16 +30,17 @@ pipeline {
             }
         }
 
-       /* stage('Build Backend') {
-            steps {
-                dir('Backend') {
-                    echo 'Building backend...'
-                    sh 'mvn clean package -X'   // Run Maven package with debug info
-                    echo 'Listing target directory contents...'
-                    sh 'ls -la target/'         // List the contents of the target directory
-                }
-            }
-        }*/
+       stage('Build Backend') {
+    steps {
+        dir('Backend') {  // Adjust the path if your pom.xml is not in this directory
+            echo 'Building backend...'
+            sh 'mvn clean package -X'   // Run Maven package with debug info
+            echo 'Listing target directory contents...'
+            sh 'ls -la target/'         // List the contents of the target directory
+        }
+    }
+}
+
 
         stage('MVN COMPILE') {
             steps {
