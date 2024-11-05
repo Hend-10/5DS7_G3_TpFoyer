@@ -17,7 +17,7 @@ pipeline {
     stages {
        stage('Checkout') {
             steps {
-                git branch: 'master',
+                git branch: 'DhikraBenMahmoud-5DS7-G3',
                     url: 'https://github.com/Hend-10/5DS7_G3_TpFoyer.git',
                     credentialsId: 'git-token'
             }
