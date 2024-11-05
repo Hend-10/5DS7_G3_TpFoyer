@@ -32,12 +32,11 @@ pipeline {
 
        stage('Build Backend') {
     steps {
-        dir('Backend') {  // Adjust the path if your pom.xml is not in this directory
-            echo 'Building backend...'
-            sh 'mvn clean package -X'   // Run Maven package with debug info
-            echo 'Listing target directory contents...'
-            sh 'ls -la target/'         // List the contents of the target directory
-        }
+        dir('Backend') {
+                        echo 'Building backend...'
+                        // You may specify goals like clean and package
+                        mvn 'clean package'
+                    }
     }
 }
 
