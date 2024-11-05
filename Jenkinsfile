@@ -35,7 +35,7 @@ pipeline {
         dir('Backend') {
                         echo 'Building backend...'
                         // You may specify goals like clean and package
-                        mvn 'clean package'
+                        sh 'mvn clean package'
                     }
     }
 }
