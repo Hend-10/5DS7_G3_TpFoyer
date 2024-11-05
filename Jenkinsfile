@@ -6,10 +6,11 @@ pipeline {
     }
 
     stages {
-        stage('Checkout GIT') {
+       stage('Checkout') {
             steps {
-                echo 'Pulling code from GitHub...'
-                git branch: 'DhikraBenMahmoud-5DS7-G3', url: 'https://github.com/Hend-10/5DS7_G3_TpFoyer.git'
+                git branch: 'DhikraBenMahmoud-5DS7-G3',
+                    url: 'https://github.com/Hend-10/5DS7_G3_TpFoyer.git',
+                    credentialsId: 'git-token'
             }
         }
 
